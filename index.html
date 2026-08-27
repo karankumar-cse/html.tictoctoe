@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>❌ Tic Tac Toe ⭕</h1>
+        <p class="subtitle">Online Multiplayer</p>
+
+        <!-- HOME -->
+        <div id="home" class="card">
+
+            <h2>Play With Friends</h2>
+
+            <input
+                type="text"
+                id="playerName"
+                placeholder="Enter your name"
+                maxlength="15"
+            >
+
+            <button id="createBtn">Create Room</button>
+
+            <div class="or">OR</div>
+
+            <input
+                type="text"
+                id="roomCodeInput"
+                placeholder="Enter room code"
+                maxlength="6"
+            >
+
+            <button id="joinBtn" class="secondary">
+                Join Room
+            </button>
+
+            <p id="error" class="error"></p>
+
+        </div>
+
+
+        <!-- GAME -->
+        <div id="game" class="card hidden">
+
+            <div class="room-info">
+                <span>Room:</span>
+                <strong id="roomCode"></strong>
+                <button id="copyBtn">📋 Copy</button>
+            </div>
+
+            <div class="players">
+
+                <div class="player">
+                    <span class="symbol x">X</span>
+                    <div>
+                        <small>Player X</small>
+                        <p id="playerX">Waiting...</p>
+                    </div>
+                </div>
+
+                <div class="player">
+                    <span class="symbol o">O</span>
+                    <div>
+                        <small>Player O</small>
+                        <p id="playerO">Waiting...</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="status">
+                Waiting for opponent...
+            </div>
+
+            <div class="board">
+
+                <button class="cell" data-index="0"></button>
+                <button class="cell" data-index="1"></button>
+                <button class="cell" data-index="2"></button>
+
+                <button class="cell" data-index="3"></button>
+                <button class="cell" data-index="4"></button>
+                <button class="cell" data-index="5"></button>
+
+                <button class="cell" data-index="6"></button>
+                <button class="cell" data-index="7"></button>
+                <button class="cell" data-index="8"></button>
+
+            </div>
+
+            <button id="restartBtn" class="restart">
+                🔄 Rematch
+            </button>
+
+            <button id="leaveBtn" class="leave">
+                Leave Room
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Firebase -->
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>
